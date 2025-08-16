@@ -1,0 +1,20 @@
+name: derivegr
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.26
+  - scipy>=1.11
+  - matplotlib>=3.8
+  - h5py>=3.10
+  - gwosc>=0.7.1
+  - typer
+  - rich
+  - pip:
+      - cupy-cuda12x
+      # Optional extras (install if needed)
+      # - pysr
+      # - spiceypy
+

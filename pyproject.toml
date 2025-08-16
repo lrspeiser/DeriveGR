@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "derivegr"
+version = "0.1.0"
+description = "Windows-first CuPy GPU CLI to derive inspiral law (df/dt ~ K f^alpha) from GWOSC and recover chirp mass"
+authors = [{ name = "Leonard Speiser" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "cupy-cuda12x",
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "h5py>=3.10",
+  "gwosc>=0.7.1",
+  "typer[all]>=0.12",
+  "rich>=13.7",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+# Optional modules
+cassini = ["spiceypy>=5"]
+symbolic = ["pysr>=0.16"]
+dev = ["pytest", "pytest-cov", "ruff", "black"]
+
+[project.scripts]
+derivegr = "derivegr.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/derivegr"]
+

@@ -1,0 +1,9 @@
+# Git LFS patterns for large artifacts
+# You use LFS for large files; track caches and outputs explicitly.
+
+data/raw/** filter=lfs diff=lfs merge=lfs -text
+data/cache/** filter=lfs diff=lfs merge=lfs -text
+outputs/** filter=lfs diff=lfs merge=lfs -text
+figures/** filter=lfs diff=lfs merge=lfs -text
+notebooks/** filter=lfs diff=lfs merge=lfs -text
+
