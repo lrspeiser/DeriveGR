@@ -21,6 +21,10 @@ venv/
 .idea/
 *.swp
 
+# Rust target
+target/
+**/target/
+
 # Data caches and outputs
 data/
 outputs/
